@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Afficher les animaux</title>
+{% endblock %}
+
+{% block body %}
+<h3>Animaux</h3>
+<div class="btn-add">
+    <a class="btn btn-primary" href="/animal/add">Ajouter un animal</a>&nbsp;
+</div>
+<br><br>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>id</th><th>id type animal</th><th>nom</th><th>prix</th><th>date naissance</th><th>couleur</th><th>poids</th><th>taille</th><th>photo</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% if animals | length >= 1 %}
+        {% for ligne in animals %}
+            <tr>
+                <td>{{ ligne.id_animal }}</td>
+                <td>{{ ligne.type_animal_id}}</td>
+                <td>{{ ligne.nom_animal }}</td>
+                <td>{{ ligne.prix_achat }}</td>
+                <td>{{ ligne.date_naissance }}</td>
+                <td>{{ ligne.couleur }}</td>
+                <td>{{ ligne.poids }}</td>
+                <td>{{ ligne.taille }}</td>
+
+                <td>
+                    {% for type_animal in type_animals %}
+                        {% if ligne.ville_id == type_animal.id_type_animal %}
+                        {{ type_animal.nom_type }}
+                    {% endif %}
+                    {% endfor %}
+                </td>
+
+                <td>
+                    <img style="width:40px;height:40px" src="/static/photos/{{ ligne.photo }}">
+                </td>
+                <td>
+                    <td>
+                        <a class="btn btn-primary" href="/animal/edit?id_animal={{ ligne.id_animal }}">Éditer</a>&nbsp;
+
+                        <form action="/animal/delete" method="POST" style="display:inline;">
+                        <input type="hidden" name="id" value="{{ ligne.id_animal }}">
+                        <button class="btn btn-danger" type="submit">Supprimer</button>
+                        </form>
+                    </td>
+                </td>
+            </tr>
+        {% endfor %}
+    {% else %}
+        <tr>
+            <td colspan="9" class="text-center">Pas d'animaux</td>
+        </tr>
+    {% endif %}
+    </tbody>
+</table>
+{% endblock %}

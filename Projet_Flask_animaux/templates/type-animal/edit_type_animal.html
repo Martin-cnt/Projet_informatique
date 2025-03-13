@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Modifier un type d'animal</title>
+{% endblock %}
+
+{% block body %}
+    <fieldset class="fieldset_add_type">
+        <legend>Modifier un type d'animal</legend>
+
+        <form method="post" action="/type-animal/edit">
+            <div class="form-group">
+                <input type="hidden" name="id_type_animal" value="{{ type_animals.id_type_animal }}" id="id_type_animal">
+                <label for="nom_type">Nom du type d'animal : <span class="obligatoire">*</span></label><br>
+                <input type="text" name="nom_type" size="18" value="{{ type_animals.nom_type }}" id="nom_type" required><br>
+                <button type="submit" class="btn btn-primary" value="Modifier">Modifier</button>
+                <a class="btn btn-danger" href="/type-animal/show">Annuler</a>
+            </div>
+        </form>
+    </fieldset>
+{% endblock %}

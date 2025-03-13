@@ -1,0 +1,179 @@
+/*
+------------------------------------------------------------------------------------------------------------
+                              ETOILE POUR DIRE QUE C'EST OBLIGATOIRE                                       |
+------------------------------------------------------------------------------------------------------------
+*/
+.obligatoire{
+    font-size: 20px;
+    color:red;
+}
+
+/*
+------------------------------------------------------------------------------------------------------------
+                       ENLEVEMENT DU SOULIGNEMENT SUR LES BOUTTONS ET LES CENTRER                          |
+------------------------------------------------------------------------------------------------------------
+*/
+
+button a{
+    text-decoration: none;
+    color:white;
+}
+.btn-add{
+    display: flex;
+    justify-content: center;
+}
+
+/*
+------------------------------------------------------------------------------------------------------------
+                                       CONTENU PAGE FORMULAIRE                                             |
+------------------------------------------------------------------------------------------------------------
+*/
+#myDIV{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color:whitesmoke;
+    margin:5%;
+    border-radius: 25px;
+}
+.card{
+    margin:2%;
+}
+.card:hover{
+    filter: brightness(0.9);
+}
+h3{
+    display: flex;
+    justify-content: center;
+}
+
+/*
+------------------------------------------------------------------------------------------------------------
+                                       FORMULAIRE FILTRE                                                   |
+------------------------------------------------------------------------------------------------------------
+*/
+#filtre {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#filtre input[type="text"]{
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+#filtre input[type="number"]{
+    width: calc(20% - 10px);
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+#filtre h3{
+        font-weight: bold;
+}
+
+
+.check-list input[type="checkbox"] {
+    margin-right: 1%;
+}
+.check-list label {
+    font-size: 14px;
+
+}
+#filtre p{
+    margin: 0 auto;
+    font-weight: bold;
+
+}
+#filtre div{
+    margin-bottom: 3%;
+}
+#filtre .btn.btn-primary{
+margin-top: 5%;
+    width:100%;
+}
+
+/*
+------------------------------------------------------------------------------------------------------------
+                                       FORMULAIRE ADD / EDIT                                               |
+------------------------------------------------------------------------------------------------------------
+*/
+
+.fieldset_add_type {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fieldset_add_type legend {
+    font-weight: bold;
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+}
+
+.fieldset_add_type label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.fieldset_add_type input[type="text"],
+.fieldset_add_type select,
+.fieldset_add_type input[type="file"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.fieldset_add_type select {
+    padding: 8px;
+}
+
+.fieldset_add_type button {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.table{
+    max-width: 1500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.etat_paragraphe{
+    display: flex;
+    justify-content: center;
+}
+.etat_paragraphe strong{
+    color:red;
+    background: yellow;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.etat_title{
+    display: flex;
+    justify-content: center;
+    color:black;
+}

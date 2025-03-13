@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Ajouter un animal</title>
+{% endblock %}
+
+{% block body %}
+    <fieldset class="fieldset_add_type">
+         <legend> Ajout d'un animal</legend>
+
+         <form method="post" action="/animal/add" >
+             <div class="form-group">
+
+                 <label for="type_animal_id">id type animal : <span class="obligatoire">*</span></label><br>
+                    <select name="type_animal_id" id="type_animal_id" required>
+                        <option value="">Sélectionner un id de type d'animal</option>
+                        {% for type_animal in type_animals %}
+                        <option value="{{ type_animal.id_type_animal }}">{{ type_animal.id_type_animal }}</option>
+                        {% endfor %}
+                    </select><br>
+
+                 <br><label for="nom_animal">Nom de l'animal : <span class="obligatoire">*</span></label><br>
+                 <input id="nom_animal" type="text" name="nom_animal" size="18" value="{{ animals.nom_animal }}" placeholder="Saisir le nom de l'animal" required>
+
+                 <label for="prix_achat ">Prix d'achat : <span class="obligatoire">*</span></label><br>
+                 <input id="prix_achat " type="number" name="prix_achat" size="18" value="{{ animals.prix_achat  }}" placeholder="Saisir date achat" required><br>
+
+                 <label for="date_naissance">Date de naissance : <span class="obligatoire">*</span></label><br>
+                 <input id="date_naissance" type="date" name="date_naissance" size="18" value="{{ animals.date_naissance }}" placeholder="Saisir une date de naissance" required><br>
+
+                 <label for="couleur">Couleur : <span class="obligatoire">*</span></label><br>
+                 <input id="couleur" type="text" name="couleur" size="18" value="{{ animals.couleur  }}" placeholder="Saisir une couleur" required><br>
+
+                 <label for="poids">Poids : <span class="obligatoire">*</span></label><br>
+                 <input id="poids" type="number" name="poids" size="18" value="{{ animals.poids  }}" placeholder="Saisir un poids" required><br>
+
+                 <label for="taille">Taille : <span class="obligatoire">*</span></label><br>
+                 <input id="taille" type="number" name="taille" size="18" value="{{ animals.taille  }}" placeholder="Saisir une taille" required><br>
+
+                 <button type="submit" class="btn btn-primary">Valider</button>
+                 <button type="button" class="btn btn-danger"><a href="/animal/show" >Annuler</a></button>
+             </div>
+
+         </form>
+
+    </fieldset>
+{% endblock %}

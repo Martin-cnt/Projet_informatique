@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Filtre animal</title>
+{% endblock %}
+
+{% block body %}
+    <h1 class="etat_title text-center">Etat des animaux</h1><br>
+
+    <br>
+    <p class="etat_paragraphe text-center">
+        Il y a un total de <strong>{{ global_stats.total_animals }}</strong> animaux enregistrés.
+        Leur poids moyen est de <strong>{{ global_stats.average_weight | round(2) }}</strong> kg,
+        et leur prix moyen d'achat est de <strong>{{ global_stats.average_price | round(2) }}</strong> €.
+    </p>
+
+    <div class="div_tb_bootstrap container mt-5">
+    {% if grouped_stats %}
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Type d'animal</th>
+                    <th>Nombre d'animaux</th>
+                    <th>Poids moyen (kg)</th>
+                    <th>Prix moyen (€)</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for stat in grouped_stats %}
+                <tr>
+                    <td>{{ stat.animal_type }}</td>
+                    <td>{{ stat.total_animals }}</td>
+                    <td>{{ stat.average_weight | round(2) }}</td>
+                    <td>{{ stat.average_price | round(2) }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="text-center">Aucun état disponible pour les types d'animaux.</p>
+    {% endif %}
+    </div>
+
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.js') }}"></script>
+{% endblock %}

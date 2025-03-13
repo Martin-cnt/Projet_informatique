@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Filtre animal</title>
+{% endblock %}
+
+{% block body %}
+<h1>Filtre</h1>
+   <form method="post" action="/animal/filtre" style="display: inline-block">
+        <div class="form-group">
+            <label>Animal dont le nom est :</label><br>
+            <input name="filter_word" type="text" placeholder="Recherche" size="10" class="form-control"
+                   value="{{ filter_word }}">
+        </div>
+       <div class="form-group">
+            <label for="filter_price">Prix d'achat (exact) :</label>
+            <input type="number" class="form-control" id="filter_price" name="filter_price" step="0.01" min="0" value="{{ request.form.get('filter_price', '') }}">
+        </div>
+
+        <br>
+        {% if type_animals is defined %}
+        <div class="form-group">
+            <h4>Animaux dont le type est :</h4>
+            {% for item_filtre in type_animals %}
+            <input type="checkbox" name="filter_types" value="{{ item_filtre.id_type_animal }}"
+                   {% set id_item = item_filtre.id_type_animal | string %}
+                   {% if session['filter_types'] %}
+                       {{ 'checked' if (id_item in session['filter_types']) else '' }}
+                   {% endif %}>
+            {{ item_filtre.nom_type }}
+            <br/>
+            {% endfor %}
+        </div>
+        {% endif %}
+       <br>
+
+           <button type="submit" class="btn btn-primary">Valider</button>
+           <a href="/animal/filtre/suppr" class="btn btn-danger">Annuler</a>
+
+           <div id="myDIV">
+                {% for animaux in animals %}
+                    <div class="card" style="width: 18rem;">
+                        <img src="/static/photos/{{ animaux.photo }}" alt="image de {{ animaux.nom_animal }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ animaux.nom_animal }}</h5>
+                            <p class="card-text">
+                                date de naissance : <strong>{{ animaux.date_naissance }}</strong> <br>
+                                couleur : <strong>{{ animaux.couleur }}</strong> <br>
+                                poids : <strong>{{ animaux.poids }} kg</strong> <br>
+                                prix achat : <strong>{{ animaux.prix_achat }} €</strong>
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+   </form>
+{% endblock %}

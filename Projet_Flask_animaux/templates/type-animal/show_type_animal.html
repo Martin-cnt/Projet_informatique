@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Afficher les types d'animaux</title>
+{% endblock %}
+
+{% block body %}
+<h3>Types d'animal</h3>
+    <div class="btn-add">
+<a class="btn btn-primary" href="/type-animal/add">Ajouter un type d'animal</a>&nbsp;
+    </div>
+    <br><br>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>id</th><th>Nom type</th><th>photo</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% if type_animals | length >= 1 %}
+        {% for ligne in type_animals %}
+           <tr>
+                  <td>{{ ligne.id_type_animal }}</td>
+                  <td>{{ ligne.nom_type}}</td>
+               <td>
+                    <img style="width:40px;height:40px" src="/static/photos/{{ ligne.photo }}">
+               </td>
+               <td>
+                    <a class="btn btn-primary" href="/type-animal/edit?id_type_animal={{ ligne.id_type_animal }}">Éditer</a>&nbsp;
+
+                    <form action="/type-animal/delete" method="POST" style="display:inline;">
+                        <input type="hidden" name="id" value="{{ ligne.id_type_animal }}">
+                        <button class="btn btn-danger" type="submit">Supprimer</button>
+                    </form>
+               </td>
+           </tr>
+        {% endfor %}
+        {% else %}
+            <tr>
+                  <td>
+                      Pas de type d'animaux
+                  </td>
+           </tr>
+    {% endif %}
+    </tbody>
+</table>
+{% endblock %}
