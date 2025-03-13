@@ -1,2 +1,2 @@
 # Projet_informatique
-Dépot Git des projets
+Dépot Git de mes projets informatiques réalisés
