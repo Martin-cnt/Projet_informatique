@@ -1,0 +1,408 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #1e1e1e   ;
+        color: #e0e0e0;
+        line-height: 1.6;
+    }
+
+    a {
+        color: #bb86fc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        color: #3700b3;
+    }
+
+    header {
+        background-color: #121212;
+        position: relative  ;
+        width: 100%;
+        z-index: 1000;
+        padding: 17px;
+    }
+
+    .nav {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #bb86fc;
+    }
+
+    .nav-liens {
+        display: flex;
+        gap: 100px;
+    }
+
+    .nav-liens a {
+        color: #e0e0e0;
+        transition: color 0.3s ease;
+    }
+
+    .nav-liens a:hover {
+        color: #bb86fc;
+    }
+
+    .titre {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://preview.redd.it/pbgdfi8pfjt71.png?width=1080&crop=smart&auto=webp&s=c91b2db6359fcfa8558ba887fe55a1635ee36352');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; 
+        position: relative;
+    }
+
+    .titre-content h1 {
+        font-size: 3rem;
+        margin-bottom: 16px;
+        animation: monter 1s ease-out;
+    }
+
+    .titre-content p {
+        font-size: 19px;
+        margin-bottom: 2rem;
+        animation: monter 1s ease-out 0.3s;
+        animation-fill-mode: both;
+    }
+
+    .c-bouton {
+        display: inline-block;
+        background-color: #bb86fc;
+        color: #000000;
+        padding: 0.8rem 2rem;
+        border-radius: 50px;
+        font-weight: bold;
+        animation: monter 1s ease-out 0.6s;
+        animation-fill-mode: both;
+    }
+
+    .c-bouton:hover {
+        background-color: #3700b3;
+        color: #ffffff;
+    }
+
+    .nouveautes {
+        padding: 2rem 0 4rem;
+        background-color: #1e1e1e;
+        position: relative;
+    }
+
+    .section-titre, .section-titre2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        color: #bb86fc;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section-titre::before, .section-titre::after {
+        content: "";
+        flex-grow: 1;
+        height: 2px;
+        background-color: #bb86fc;
+        margin: 0 20px;
+    }
+
+
+
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .cartes-grilles {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 0.5fr));
+        gap: 2rem;
+    }
+
+    .carte {
+        background-color: #2d2d2d;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        width : 350px;
+        transform: scale(0.95);
+    }   
+
+    .carte:hover{
+        transform: scale(1.05);
+    }
+
+
+
+
+    .carte img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .carte-content {
+        padding: 24px;
+    }
+
+    .carte-titre {
+        font-size: 19px;
+        margin-bottom: 0.5rem;
+        color: #bb86fc;
+    }
+
+    .carte-prix {
+        font-weight: bold;
+        color: #03dac6;
+        margin-bottom: 16px;
+    }
+
+    .carte-bouton {
+        display: block;
+        width: 100%;
+        padding: 0.8rem;
+        background-color: #3700b3;
+        color: #ffffff;
+        text-align: center;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .carte-bouton:hover {
+        background-color: #bb86fc;
+        color: #000000;
+    }
+
+
+    .section-titre2::after {
+        content: "";
+        flex-grow: 1;
+        height: 2px;
+        background-color: #bb86fc;
+        margin-right: 300px;
+        margin-left: 10px;
+    }
+    .section-titre2::before{
+        content: "";
+        flex-grow: 1;
+        height: 2px;
+        background-color: #bb86fc;
+        margin-left: 300px;
+        margin-right: 10px;
+    }
+
+    .recherchee{
+        margin-bottom: 20px;
+        display : grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 0.5fr));
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    #chart1 {
+        background-color: #2d2d2d;    
+    }
+
+    .graph{
+        margin-left: 40px;
+        height: 400px;  
+    }
+
+    .carte-rare img{
+    border-radius: 20px;
+    height : 351px;
+
+    }
+    .carte-rare{
+        display: flex;
+        justify-content: center ;
+
+    }
+    .bulle{
+        height: 300px;
+        width : 400px;
+        background-color: #2d2d2d;
+        border-radius: 45% 30% 30% 45% / 45% 40% 45% 40%;  
+        margin-left: 20px;
+        opacity : 0;
+        transition: opacity 0.5s ease;
+    }
+    .carte-rare p {
+        margin-top: 50px;
+        padding: 20px;
+        margin-left : 10px; 
+        /* border: 1px solid rgb(18, 118, 51); */
+        text-align: center;
+    }
+    .carte-rare:hover .bulle{
+        opacity: 1;
+
+    }
+
+    footer {
+        background-color: #121212;
+        color: #e0e0e0;
+        padding: 2rem 0;
+        text-align: center;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .footer-section {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .footer-section h3 {
+        color: #bb86fc;
+        margin-bottom: 16px;
+    }
+
+    .footer-page {
+        display: flex;
+        flex-direction: column;
+        line-height: 2;
+        color: white;
+    }
+
+    .footer-page a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .footer-page a:hover, .footer-liens a:hover {
+        font-size: larger;
+        color: #bb86fc;
+    }
+
+    .footer-liens {
+        list-style: none;
+    }
+
+    .footer-liens a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .footer-liens li {
+        margin-bottom: 0.5rem;
+    }
+
+    .copyright {
+        margin-top: 2rem;
+        color: #9e9e9e;
+    }
+
+    @keyframes monter {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .logo {
+            display: block;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    
+        .nav-liens {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+    
+        .nav-liens a {
+            margin-top: 5px;
+        }
+    
+
+        .titre-content h1 {
+            font-size: 2rem;
+        }
+
+        .titre-content p {
+            font-size: 16px;
+        }
+
+        .cartes-grilles {
+            grid-template-columns: 1fr;
+        }
+
+        .carte {
+            transform: scale(1);
+            margin-left: 12.5%;
+        }
+
+        .recherchee{
+            display: flex;
+            flex-direction: column;
+        }
+        .carte-rare{
+            display:flex;
+            flex-direction: column;
+            width: 50%;
+            align-items: center;
+            margin-left: 25%;
+        }
+
+        .graph{
+            margin-left: 0;
+            height: 300px;
+        }
+        .footer-content {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-section {
+            text-align: center;
+        }
+
+        .section-titre2::before, .section-titre2::after {
+            display: none;
+        }
+    }
+    

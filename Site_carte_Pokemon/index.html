@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokéStore - Cartes Pokémon Rares et Exclusives</title>
+    <link rel="stylesheet" href="accueil/pokemon_accueil.css">
+    <link rel="icon" href="  https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/770px-Pok%C3%A9_Ball_icon.svg.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.5/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="logo">PokéStore </div>
+            <div class="nav-liens">
+                <a href="index.html">Accueil</a>                
+                <a href="boutique/boutique.html">Boutique</a>
+                <a href="panier/panier.html">Panier</a>
+                <a href="apropos/apropos.html">A Propos</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="titre">
+            <div class="titre-content">
+                <h1>Découvrez l'univers des cartes Pokémon</h1>
+                <p>Plongez dans l'addiction et collectionnez les cartes les plus rares </p>
+                <a href="#nouveautes" class="c-bouton">Explorez la collection</a>
+            </div>
+        </section>
+
+        <section id="nouveautes" class="nouveautes">
+            <div class="container">
+                <h2 class="section-titre">Nouveaux Ajouts</h2>
+                <div class="cartes-grilles">
+                    <div class="carte">
+                        <img src="image/dracaufeu.png" alt="Dracaufeu V Shiny">
+                        <div class="carte-content">
+                            <h3 class="carte-titre">Dracaufeu V Shiny </h3>
+                            <p class="carte-prix">129.99€</p>
+                            <bouton class="carte-bouton">Ajouter au panier</bouton>
+                        </div>
+                    </div>
+                    <div class="carte">
+                        <img src="image/giratina.jpg" alt="Giratina V">
+                        <div class="carte-content">
+                            <h3 class="carte-titre">Giratina V </h3>
+                            <p class="carte-prix">349.99€</p>
+                            <bouton class="carte-bouton">Ajouter au panier</bouton>
+                        </div>
+                    </div>
+                    <div class="carte">
+                        <img src="image/groudon.png" alt="Primo Groudon Shiny full art">
+                        <div class="carte-content">
+                            <h3 class="carte-titre">Primo Groudon Shiny full art</h3>
+                            <p class="carte-prix">99.99€</p>
+                            <bouton class="carte-bouton">Ajouter au panier</bouton>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+                <h2 class="section-titre2">La carte la plus recherchée</h2>
+        <section class="recherchee">
+
+        <div class="graph">
+            <canvas id="chart1"></canvas>
+        </div>
+        <div class="carte-rare">
+            <img src="image/dracaufeu_edition1.png" alt="Dracaufeu edition 1">
+            <div class="bulle">
+                <p>Dracaufeu Holographique 1re génération est la carte la plus cher sur le site et la plus cher, c'est du à son iconicité et à sa popularité sur les réseaux. La hausse de son prix en 2021, est apparu à cause du conifinement et les streamer qui ont popularisé la carte. Aujourd'hui la carte coûte dans les 225 000 €. </p>
+            </div>
+        </div>
+        </section>
+
+        
+
+        
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                <h3><strong>Nos autres pages </strong></h3>
+                <div class="footer-page">
+                    <a href="index.html">Accueil</a>                    
+                    <a href="boutique/boutique.html">Boutique</a>
+                    <a href="panier/panier.html">Panier</a>
+                    <a href="a propos/apropos.html">A Propos</a>
+                </div>
+                
+                </div>
+                <div class="footer-section">
+                    <h3>Liens rapides</h3>
+                    <ul class="footer-liens">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Conditions générales</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: PokéStore@xyz.com</p>
+                    <p>Téléphone: +33 6 66 66 66 66</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 PokéStore. Tous droits réservés.<br> Page faite par BELEY Gautier</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        var canvas = document.getElementById("chart1")
+        const data = {
+            labels: [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+
+            datasets: [{
+                label: 'Graphique du prix sur chaque année',
+                data: [125, 175, 225, 275, 325, 375, 425, 475, 550, 650, 750, 900, 1250, 1750, 2250, 4000, 6000, 8000, 11000, 13500, 50000, 350000, 225000, 225000, 225000],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        };
+
+        const chart = new Chart(canvas, {
+            type: 'line',
+            data: data,
+            options: {
+
+            },
+        });
+
+    </script>
+</body>
+</html>
